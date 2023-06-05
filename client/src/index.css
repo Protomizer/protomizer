@@ -160,14 +160,14 @@ button{
 
 @media(max-width: 600px){
   .email-input-container {
-      width: 300px;
+      width: 90%;
       min-width: 300px;
-      max-width: 300px;
+      /* max-width: 300px; */
+      max-width: 90%;
     }
 }
 
 .email-input-container input {
-
   background: white;
   width: 100%;
   border-radius: 6px;
@@ -184,7 +184,7 @@ button{
 }
 
 .numbers-section{
-  background: linear-gradient(to bottom, #F8F2FF, white);
+  background: #F5EEFF;
 }
 
 .purple-bg{
@@ -197,12 +197,15 @@ button{
   background: linear-gradient(to bottom, #DFB8FF, white);
 }
 
+.features-section{
+background: #F5EEFF;
+}
 
 
 @media(max-width: 768px) {
 
   .feature-item img {
-    order: -1 !important;
+    order: 1 !important;
   }
 }
 

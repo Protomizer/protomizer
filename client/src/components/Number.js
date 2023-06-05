@@ -12,8 +12,7 @@ const Number = ({ number, content }) => {
       </div>
 
       <p className="text-gray-500">
-        To find out if your ads, landing pages,To find out if your ads, landing
-        pages,To find out if your ads, landing pages,
+        {content}
       </p>
     </div>
   );

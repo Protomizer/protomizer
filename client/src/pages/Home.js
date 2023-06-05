@@ -9,6 +9,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
+
 import updateIcon from "../assets/updateIcon.png";
 import testType1 from "../assets/testtype1.png";
 import testType2 from "../assets/testtype2.png";
@@ -18,6 +19,8 @@ import feature1 from "../assets/feature1.png";
 import feature2 from "../assets/feature2.png";
 import feature3 from "../assets/feature3.png";
 
+import { features } from "../utils/data";
+
 import Logo from "../assets/logo.png";
 
 import { Card, Number, Feature, ListItem, HeroList } from "../components";
@@ -26,34 +29,38 @@ import EmailSubmit from "../components/EmailSubmit";
 const Home = () => {
   return (
     <>
-      <section className="hero w-screen min-h-[60vh] md:min-h-[120vh] relative border-2 pb-20">
-        <div className="pl-[5%] pt-[100px] w-full grid md:grid-cols-2 relative">
+      <section className="hero w-screen min-h-[60vh] md:min-h-[120vh] relative  pb-20">
+        <div className="px-[5%] pt-[100px] w-full grid md:grid-cols-2 relative">
           <div className="flex flex-col max-w-full">
-            <h4 className="text-gray-700 text-sm md:text-base uppercase font-bold">
+            <h4 className="text-[#563785] text-sm md:text-base uppercase font-bold">
               Figma Plugin / Results
             </h4>
            
             <h1 className="my-4 text-5xl md:text-8xl text-[#4700E3]">Proto<span className="text-[#0041D9] font-light">mizer</span></h1>
-            <h3 className="text-gray-500 text-xl md:text-4xl my-4">
+            <h3 className="text-[#563785] text-xl md:text-4xl my-4">
               Understand Your Product’s UX & Boost Business ROI
             </h3>
 
-            <div className="block my-10 md:hidden">
+            {/* <div className="block my-10 md:hidden">
               <HeroList />
-            </div>
+            </div> */}
 
-            <div className="flex space-x-2 my-4 md:mb-[90px]">
+            {/* <div className="flex space-x-2 my-4 md:mb-[90px]">
               <button className="bg-[#001EB2] text-white border-2 border-[#001EB2]">
                 Get Early Access
               </button>
               <button className="bg-[#BFD3FF] text-blue-700 border-2 border-blue-700">
                 Learn More
               </button>
-            </div>
+            </div> */}
 
-            <div className="hidden md:block">
+            <EmailSubmit/>
+
+            <p className="text-lg text-[#563785] my-10">Sign up for our newsletter and be the first to know about product releases, promotions, and more. We plan to release a freemium & paid version</p>
+
+            {/* <div className="hidden md:block my-10">
               <HeroList />
-            </div>
+            </div> */}
           </div>
 
           <img
@@ -64,7 +71,7 @@ const Home = () => {
 
         <div className="test-types md:mt-[60px]">
           <div className="container">
-            <h1 className="text-2xl md:text-6xl text-gray-700 font-bold max-w-[90%] mb-[50px]">
+            <h1 className="text-2xl md:text-6xl text-[#563785] font-bold max-w-[90%] mb-[50px]">
               <span className="text-[#803FFE]">Transform</span> Your Online
               Product Through Tangible User Insights
             </h1>
@@ -80,9 +87,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="test-types py-20 bg-[#F5EEFF]">
+      <section className="test-types pb-20 bg-[#fdfbff]">
         <div className="container">
-          <h2 className="text-gray-800 text-3xl text-center">Test Types</h2>
+          <div className="w-full h-[5px] bg-gradient-to-br from-[#eadefb] to-[#fdfcff] mb-8"></div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-full mt-[30px]">
             <Card
@@ -104,6 +111,51 @@ const Home = () => {
         </div>
       </section>
 
+
+      <section className="numbers-section py-20 md:py-48">
+        <div className="container">
+          <h1 className="text-xl md:text-5xl text-[#563785] font-bold max-w-[100%] md:max-w-[90%] mb-[50px]">
+            <span className="text-[#9B63FF]">
+              Providing valuable solutions{" "}
+            </span>{" "}
+            to your users{" "}
+            <br className="md:block hidden"/>
+            <span className="text-[#6610F2]">is more important than ever</span>
+          </h1>
+
+          <div className="grid md:grid-cols-3 gap-4 max-w-full">
+            <Number
+              number="1"
+              content="First create a test & specify type, then  add prototypes or code deploys that will be tested, then you have a choice of add users or sending a invite link."
+            />
+            <Number
+              number="2"
+              content="As users are taking the test you made Protomizer will record your user’s interactions with your website / online product’s prototypes."
+            />
+            <Number
+              number="3"
+              content="Results of the testing process will be displayed as static visual and in-depth on your Protomizer dashboard, allowing for easy identification of any issues."
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="features-section relative py-12  md:py-24">
+        <div className="container">
+          {/* <div className="purple-bg"></div> */}
+          {/* <h1 className="text-xl md:text-5xl text-[#563785] font-bold max-w-[100%] md:max-w-[90%] mb-[50px]">
+            Test Interfaces with <span className="text-[#9B63FF]">Protomizer</span>{" "}
+            while working with your{" "}
+            <span className="text-[#9B63FF]">favorite tools</span>
+          </h1> */}
+
+          {features.map((item, index) => {
+            return <Feature {...item} reverse={index === 1}/>
+          })}
+
+        </div>
+      </section>
+
       <section className="updates-section py-20 bg-[#FAF6FF]">
         <div className="max-w-[800px] mx-auto text-center flex flex-col justify-center items-center">
           <img
@@ -119,62 +171,6 @@ const Home = () => {
           </p>
 
          <EmailSubmit/>
-        </div>
-      </section>
-
-      <section className="numbers-section bg-[#F8F2FF] py-20 md:py-48">
-        <div className="container">
-          <h1 className="text-xl md:text-5xl text-gray-700 font-bold max-w-[100%] md:max-w-[90%] mb-[50px]">
-            <span className="text-[#9B63FF]">
-              Providing valuable solutions{" "}
-            </span>{" "}
-            to your users{" "}
-            <br className="md:block hidden"/>
-            <span className="text-[#6610F2]">is more important than ever</span>
-          </h1>
-
-          <div className="grid md:grid-cols-3 gap-4 max-w-full">
-            <Number
-              number="1"
-              content="To find out if your ads, landing pages,To find out if your ads, landing pages,To find out if your ads, landing pages,"
-            />
-            <Number
-              number="2"
-              content="To find out if your ads, landing pages,To find out if your ads, landing pages,To find out if your ads, landing pages,"
-            />
-            <Number
-              number="3"
-              content="To find out if your ads, landing pages,To find out if your ads, landing pages,To find out if your ads, landing pages,"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="features-section relative py-12  md:py-24">
-        <div className="container">
-          <div className="purple-bg"></div>
-          <h1 className="text-xl md:text-5xl text-[#563785] font-bold max-w-[100%] md:max-w-[90%] mb-[50px]">
-            Test Interfaces with <span className="text-[#9B63FF]">Protomizer</span>{" "}
-            while working with your{" "}
-            <span className="text-[#9B63FF]">favorite tools</span>
-          </h1>
-
-          <Feature
-            image={feature1}
-            title="Drive higher conversions"
-            content="Get AB testing insights about your concepts—without needing live traffic or large sample sizes."
-          />
-          <Feature
-            image={feature2}
-            title="Improve UX and usability"
-            content="Get AB testing insights about your concepts—without needing live traffic or large sample sizes."
-            reverse={true}
-          />
-          <Feature
-            image={feature3}
-            title="Validate your concepts"
-            content="Get AB testing insights about your concepts—without needing live traffic or large sample sizes."
-          />
         </div>
       </section>
 

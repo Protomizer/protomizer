@@ -21,7 +21,7 @@ const EmailSubmit = () => {
         <div className="email-input-container flex items-center">
             <input
               type="text"
-              placeholder="john@gmail.com"
+              placeholder="Enter your email"
               className={
                 type === 'success' ? 'border-blue-500 border-2':
                 type === 'rejected' ? 'border-red-500 border-2':
@@ -30,8 +30,8 @@ const EmailSubmit = () => {
               onChange={(e) => dispatch(updateEmail(e.target.value))}
               value={email}
             />
-            <button className="border-2 border-blue-500 bg-blue-500 text-white rounded-md" onClick={handleSubmit} disabled={loading || message}>
-               {loading ? 'Loading...' : 'Submit'}
+            <button className="border-2 w-auto border-blue-500 bg-blue-500 text-white rounded-md min-w-[140px]" onClick={handleSubmit} disabled={loading || message}>
+               {loading ? 'Loading...' : 'Join Waitlist'}
             </button>
 
 
